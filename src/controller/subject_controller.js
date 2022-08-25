@@ -10,7 +10,8 @@ const subList = async (req, res) => {
 };
 
 const addSub = async (req, res) => {
-  const checkSub = await Subject.findOne({ className: req.body.subName });
+  const checkSub = await Subject.findOne({ subName: req.body.subName });
+  console.log(checkSub);
   if (!checkSub) {
     const sub = new Subject({
       classId: req.body.classId,
@@ -29,9 +30,12 @@ const addSub = async (req, res) => {
       res.send("Error");
     }
   } else {
-    res.send(
-      "Subject with" + " '" + req.body.subName + "' " + "name already exist"
-    );
+    const result = {
+      status: 409,
+      msg:
+        "Subject with" + " '" + req.body.subName + "' " + "name already exist",
+    };
+    res.send(result);
   }
 };
 

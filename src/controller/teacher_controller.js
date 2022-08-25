@@ -11,7 +11,8 @@ const teacherList = async (req, res) => {
 
 const addTeacher = async (req, res) => {
   const teacher = new Teacher({
-    name: req.body.name,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
     sub: req.body.sub,
     class: req.body.class,
     age: req.body.age,
@@ -38,8 +39,11 @@ const editTeacher = async (req, res) => {
     // console.log(req.params.id);
     const temp = await Teacher.findById(req.params.id);
     // console.log(stud);
-    if (req.body.name) {
-      temp.name = req.body.name;
+    if (req.body.first_name) {
+      temp.first_name = req.body.first_name;
+    }
+    if (req.body.last_name) {
+      temp.last_name = req.body.last_name;
     }
     if (req.body.sub) {
       temp.sub = req.body.sub;

@@ -14,7 +14,9 @@ const addStudent = async (req, res) => {
     name: req.body.name,
     middle_name: req.body.middle_name,
     last_name: req.body.last_name,
-    class: req.body.class,
+    classId: req.body.classId,
+    classSec: req.body.classSec,
+    roll_no: req.body.roll_no,
     age: req.body.age,
     gender: req.body.gender,
     enroll_no: req.body.enroll_no,
@@ -48,8 +50,14 @@ const editStudent = async (req, res) => {
     if (req.body.last_name) {
       stud.last_name = req.body.last_name;
     }
-    if (req.body.class) {
-      stud.class = req.body.class;
+    if (req.body.classId) {
+      stud.classId = req.body.classId;
+    }
+    if (req.body.classSec) {
+      stud.classSec = req.body.classSec;
+    }
+    if (req.body.roll_no) {
+      stud.roll_no = req.body.roll_no;
     }
     if (req.body.age) {
       stud.age = req.body.age;

@@ -4,6 +4,7 @@ const classList = async (req, res) => {
   try {
     const cls = await modelClass.find();
     res.json(cls);
+    //console.log(cls);
   } catch (err) {
     res.send("Error");
   }

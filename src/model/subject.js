@@ -4,7 +4,7 @@ const subjectSchema = new mongoose.Schema({
     type: Number,
     require: true,
   },
-  className: {
+  subName: {
     type: String,
     required: true,
   },

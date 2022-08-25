@@ -12,7 +12,15 @@ const studentSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  class: {
+  classId: {
+    type: Number,
+    require: true,
+  },
+  classSec: {
+    type: String,
+    require: true,
+  },
+  roll_no: {
     type: Number,
     require: true,
   },
